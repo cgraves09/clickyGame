@@ -1,6 +1,15 @@
 .jumbotron {
     text-align: center;
-}
-.col-md-4 {
+    background: url('https://www.impericon.com/media/impericon/header/entertainment/20161108_family_guy.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 200px;
     text-align: center;
+}
+.logo {
+    font-size: 60px;
+    font-family: 'Krona One', sans-serif;
+    color: white;
+    text-shadow: 2px 2px #000000;
 }

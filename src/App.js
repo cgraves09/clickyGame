@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Header from './components/header/Header';
 import images from './familyGuy.json';
 import Results from './components/results/Results';
-import Row from './components/Row'
+import Row from './components/Row';
+import SubHeader from './components/subHeader/SubHeader';
+import Score from './components/score/Score';
 class App extends Component {
   state = {
     score: 0,
@@ -24,8 +26,8 @@ class App extends Component {
     }else {
       clickedImagesArr.push(id);
 
-      if(clickedImagesArr.length === 8){
-        this.setState({clickedImagesArr: [],score: 8, status: 'Great Job You Won!'});
+      if(clickedImagesArr.length === 9){
+        this.setState({clickedImagesArr: [],score: 9, status: 'Great Job You Won!'});
         return
       }
       this.setState({images,topScore: clickedImagesArr.length ,clickedImagesArr,score: clickedImagesArr.length, status: ' '});
@@ -35,12 +37,18 @@ class App extends Component {
 render() {
   return ( 
     <div>
-      <Header score={this.state.score} answer={this.state.answer} status={this.state.status} />
+      <SubHeader />
+      <Header />
       <div className='container'>
-      <Row> 
-        {this.state.images.map(image => (
-            <Results image={image.image} id={image.id} key={image.id} shuffleImages= {this.shuffleImages} />
-        ))}
+      <Row>
+        <div className='col-md-8'>
+          <Row>
+            {this.state.images.map(image => (
+              <Results image={image.image} id={image.id} key={image.id} shuffleImages= {this.shuffleImages} />
+            ))}
+          </Row>
+        </div>
+        <Score score={this.state.score} status={this.state.status} />
       </Row>
       </div>
     </div>

@@ -1,0 +1,12 @@
+.img-thumbnail {
+    height: 250px;
+    width: 250px;
+    padding: 15px;
+    box-shadow: 10px 10px grey;
+}
+.images {
+    padding: 30px;
+}
+body {
+    background-color: black;
+}
